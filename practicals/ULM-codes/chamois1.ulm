@@ -1,0 +1,58 @@
+defmod chamois1(11)
+mat : a
+vec : v
+
+defvec v(11)
+N1 , N2 , N3 , N4 , N5 , N6 , N7 , N8 , N9 , N10 , N11
+
+defmat a(11)
+0, s0*m2*f, s0*m*f, s0*m*f, s0*m*f, s0*m*f, s0*m*f, s0*m*f, s0*m*f, s0*m*f, s0*m*f
+s1 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0
+0 , s210 , 0 , 0,  0,  0 , 0 , 0 , 0 , 0 , 0 
+0 , 0 , S210 , 0,  0 , 0 , 0 , 0 , 0 , 0 , 0
+0 , 0 , 0 , s210 , 0 , 0 , 0 , 0 , 0 , 0 , 0 
+0 , 0 , 0 , 0 ,  s210 , 0 , 0 , 0 , 0 , 0 , 0
+0 , 0 , 0 , 0 , 0 ,  s210, 0 , 0 , 0 , 0 , 0 
+0 , 0 , 0 , 0 , 0 , 0 ,  s210 , 0 , 0 , 0 , 0 
+0 , 0 , 0 , 0 , 0 , 0 , 0 ,  s210 , 0 , 0 , 0 
+0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,  s210 , 0 , 0 
+0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 , 0 ,  s210 , s11
+
+
+defvar N1 = 100
+
+defvar N2 = 100
+
+defvar N3 = 100
+
+defvar N4 = 100
+
+defvar N5 = 100
+
+defvar N6 = 100
+
+defvar N7 = 100
+
+defvar N8 = 100
+
+defvar N9 = 100
+
+defvar N10 = 100
+
+defvar N11 = 100
+
+defvar N = N1 + N2 + N3 + N4 + N5 + N6 + N7 + N8 + N9 + N10 + N11
+
+defvar s0 = 0.66
+
+defvar s1 = 0.897
+
+defvar s210 = 0.962
+
+defvar s11 = 0.733
+
+defvar f = 1/2
+
+defvar m2 = 0.66
+
+defvar m = 0.92

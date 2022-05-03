@@ -1,0 +1,12 @@
+{Ricker model
+defmod ricker(1)
+rel: rel
+
+defrel rel
+N = N*exp(r*(1-N/K))
+
+defvar N = 1
+
+defvar K = 100
+
+defvar r = 0.25

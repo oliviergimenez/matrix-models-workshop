@@ -1,0 +1,47 @@
+defmod carbodi(5)
+mat : a
+vec : v
+
+defvec v(5)
+n1 , n2 , n3, n4 , n5
+
+defmat a(5)
+0, 0 , s0*a3*h*c/2, s0*a4*h*c/2, s0*h*c/2
+s1, 0, 0, 0 , 0
+0, sa, 0, 0 , 0
+0, 0, sa, 0 , 0
+0, 0, 0, sa , sa
+
+defvar n1 = 1
+
+defvar n2 = 1
+
+defvar n3 = 1
+
+defvar n4 = 1
+
+defvar n5 = 1
+
+defvar a3 = .1
+
+defvar a4 = .6
+
+defvar s0 = 0.64*cs
+
+defvar s1 = 0.86*cs
+
+defvar sa = 0.89*cs
+
+{ average clutch size that can be decremented through egg removal
+defvar c = 3.5*cf
+
+{ nestling survival
+defvar h = 0.7
+
+{ parameter for decrementing clutch size by a given percent through egg removal
+defvar cf = 1
+
+{ parameter for decrementing survival through culling
+defvar cs = 1
+
+defvar ntot = n1+n2+n3+n4+n5

@@ -1,0 +1,25 @@
+{DD Metapopulation Model with spatial structure but not stage structure
+defmod ddmp(2)
+mat : m 
+vec : v
+
+defvec v(2)
+source,sink
+
+defmat m(2)
+exp(r*(1-source/K))*p, 0
+exp(r*(1-source/K))*(1-p),q
+
+defvar N = source+sink
+
+defvar K = 100
+
+defvar r = 0.8
+
+defvar p = 0.8
+
+defvar q = 0.6
+
+defvar source = 40
+
+defvar sink = 30

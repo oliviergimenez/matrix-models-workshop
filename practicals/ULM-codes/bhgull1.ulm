@@ -1,0 +1,93 @@
+{ Model for BHG 2 sites, scenario 1.
+{ LebretoN, J.-D. 1996. Theor.Pop.Biol. 
+defmod bhgull1(10)
+mat : A
+vec : w
+
+defvec w(10)
+Ng1,Ng2,Ng3,Ng4,Ng5,Nb1,Nb2,Nb3,Nb4,Nb5
+
+defmat A(10)
+  0, sg0*fg*pg2, sg0*fg*pg3, sg0*fg*pg4, sg0*fg*pg5,  0,   0,   0,   0,   0
+sg1,  0,   0,   0,   0, s1bg,   0,   0,   0,   0
+  0,    s,   0,   0,   0,   0,   0 ,  0,   0,   0
+  0,   0,   s,    0,   0,   0,   0,   0,   0,   0
+  0,   0,   0,   s,    s,   0,   0,   0,   0,   0
+  0,  0,  0,  0,  0,  0, sb0*fb*pb2, sb0*fb*pb3, sb0*fb*pb4, sb0*fb*pb5
+s1gb, 0,   0,   0,   0, sb1,   0,   0,    0,   0
+  0,   0,   0,   0,   0,  0,   s,   0,    0,   0
+  0,   0,   0,   0,   0,  0,   0,   s,    0,   0 
+  0,   0,   0,   0,   0,  0,   0,   0,    s,   s
+
+defvar Ng1 = 1
+
+defvar Ng2 = 1
+
+defvar Ng3 = 1
+
+defvar Ng4 = 1
+
+defvar Ng5 = 1
+
+defvar Ng = Ng1 + Ng2 + Ng3 +Ng4 +Ng5
+
+defvar Nb1 = 1
+
+defvar Nb2 = 1
+
+defvar Nb3 = 1
+
+defvar Nb4 = 1
+
+defvar Nb5 = 1
+
+defvar Nb = Nb1 + Nb2 + Nb3 +Nb4 +Nb5
+
+defvar N = Ng + Nb
+
+defvar Nbreedg = pg2*Ng2+pg3*Ng3+pg4*Ng4+pg5*Ng5
+
+defvar Nbreedb = pb2*Nb2+pb3*Nb3+pb4*Nb4+pb5*Nb5
+
+defvar ratio=Nbreedg/Nbreedb
+
+{ demographic rates for populatioN G:
+
+defvar sg0 = 0.4
+
+defvar sg1 = 0.6
+
+defvar s = 0.82
+
+{fg = half mean clutch size
+defvar fg = 0.8
+
+defvar pg2 = 0.3
+
+defvar pg3 = 0.5
+
+defvar pg4 = 0.7
+
+defvar pg5 = 1.0
+
+{ demographic rates for populatioN B:
+defvar sb0 = 0.4
+
+defvar sb1 = 0.5
+
+{fb = half mean clutch size
+defvar fb = 0.5
+
+defvar pb2 = 0.5
+
+defvar pb3 = 0.8
+
+defvar pb4 = 1.0
+
+defvar pb5 = 1.0
+
+{ effective migration rates: juvenile dispersal times their survival
+defvar s1gb = 0.2
+
+defvar s1bg = 0.3
+

@@ -1,0 +1,126 @@
+{ Model for red deer with two sexes, reproduction a function of ratio males/females
+{ unbalanced sex ratio and harvest of males aged 3+
+{ age max (12) corresponds ot senescence
+
+defmod deer(24)
+mat: a
+vec: v
+
+{ vector females then males
+defvec v(24)
+f1,f2,f3,f4,f5,f6,f7,f8,f9,f10,f11,f12,m1,m2,m3,m4,m5,m6,m7,m8,m9,m10,m11,m12
+
+{ matrix 2 sexes
+defmat a(24)
+0,a2*p*f,p*f,p*f,p*f,p*f,p*f,p*f,p*f,p*f,p*f,p*f, 0,0,0,0,0,0,0,0,0,0,0,0
+s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,s,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,s,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,s,0,0,0,0,0,0,0,0,0,0,0,0,0
+0,a2*p*m,p*m,p*m,p*m,p*m,p*m,p*m,p*m,p*m,p*m,p*m, 0,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,q,0,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,q,0,0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,q*(1-h),0,0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,q*(1-h),0,0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,q*(1-h),0,0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,q*(1-h),0,0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,q*(1-h),0,0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,d*(1-h),0,0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,d*(1-h),0,0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,d*(1-h),0,0
+0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,d*(1-h),0
+
+{ net fecundity in females per females
+{ fec * sex ratio at birth * FY survival
+defvar f = fec*sr*s0
+
+{ net fecundity in males per females
+{ fecundity fec * 1- sex ratio at birth (% males) sr * FY survival s0
+defvar m = fec*(1-sr)*s0
+
+defvar fec = 0.8
+
+{proportion of breeders at age 2
+defvar a2 = 0.6
+
+{ frequency-dependence
+defvar b = 1
+
+{ survival
+defvar s0 = 0.6
+
+defvar s = 0.92
+
+defvar q = 0.85
+
+defvar d = 0.75
+
+{ sex ratio at birth
+defvar sr = 0.6
+
+{harvest
+defvar h = 0
+
+{ numbers of individuals per sex
+defvar nf = f2+f3+f4+f5+f6+f7+f8+f9+f10+f11+f12
+
+defvar nm = m4+m5+m6+m7+m8+m9+m10+m11+m12
+
+{ proportion of reproduction as a function of the male/female ratio 
+defvar p = 1/( 1+ exp(-b*nm/nf) ) 
+
+{ initial numbers
+defvar f1 = 100
+
+defvar f2 = 70
+
+defvar f3 = 65
+
+defvar f4 = 60
+
+defvar f5 = 55
+
+defvar f6 = 45
+
+defvar f7 = 40
+
+defvar f8 = 35
+
+defvar f9 = 30
+
+defvar f10 = 25
+
+defvar f11 = 20
+
+defvar f12 = 15
+
+defvar m1 = 80
+
+defvar m2 = 70
+
+defvar m3 = 65
+
+defvar m4 = 60
+
+defvar m5 = 50
+
+defvar m6 = 40
+
+defvar m7 = 30
+
+defvar m8 = 25
+
+defvar m9 = 20
+
+defvar m10 = 15
+
+defvar m11 = 10
+
+defvar m12 = 5
