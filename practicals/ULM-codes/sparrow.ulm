@@ -1,0 +1,28 @@
+{ Model for house sparrow with demographic stochasticity.
+
+defmod sparrow(1)
+rel : rn1
+
+{ relation for n1
+defrel rn1
+n = poisson(n*s0*f)+ binomf(n,s1)
+
+{ initial numbers
+defvar n = 10
+
+{ FY survival probability
+{ defvar s0low = gaussf(0.25,0.05)
+defvar s0low = 0.2
+
+defvar s0 = s0low*exp(-b*n)
+
+{ AFY survival probability
+defvar s1low = 0.5
+
+defvar s1 = s1low*exp(-b*n)
+
+{ density dependence
+defvar b = 0.01
+
+{ female fecundity 
+defvar f = 6.0/2

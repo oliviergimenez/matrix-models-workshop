@@ -1,0 +1,38 @@
+{ Swallow 
+
+defmod swallow(2)
+mat: a
+vec: w
+
+{ population vector
+defvec w(2)
+N1, N2
+
+{ population matrix
+defmat a(2)
+f1*s0, f2*s0  
+s1, s2
+  
+{ initial number of FY
+defvar N1 = 10
+  
+{ initial number of AFY
+defvar N2 = 0
+
+{ total population size
+defvar N = N1 + N2
+ 
+{ FY female fecundity
+defvar f1 = 1.5
+
+{ AFY female fecundity
+defvar f2 = 3
+
+{ juvenile survival rate 
+defvar s0 = 0.2
+
+{ subadult survival rate
+defvar s1 = 0.5
+
+{ adult survival rate
+defvar s2 = 0.65

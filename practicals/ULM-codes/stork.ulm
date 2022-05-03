@@ -1,0 +1,36 @@
+{ White Stork  C. ciconia in Alsace (eastern France)
+defmod stork(4)
+mat : a
+vec : v
+
+defvec v(4)
+N1, N2, N3, N4
+
+defmat a(4)
+0, 0, s0*u*r*b/2, s0*r*b/2
+s1, 0, 0, 0
+0, s1, 0, 0
+0, 0, s1, s1
+
+defvar N1 = 80
+
+defvar N2 = 60
+
+defvar N3 = 40
+
+defvar N4 = 100
+
+{ s0 FY survival
+defvar s0 = 0.482
+
+{ s1 AFY survival
+defvar s1 = 0.750
+
+{ r proportion of breeders that are successful
+defvar r = 0.818
+
+{ b number of fledglings per successful pair 
+defvar b = 2.90
+
+{ u proportion of breeders among 3 year olds
+defvar u = 0.45

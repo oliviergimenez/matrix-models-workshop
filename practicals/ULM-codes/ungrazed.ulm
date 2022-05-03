@@ -1,0 +1,56 @@
+{ungrazed kidney vetch
+defmod anthyllis(6)
+mat : a
+vec : v
+
+defvec v(6)
+S, SD, R11, NR1, R21, R22
+
+defmat a(6)
+CS, f1*C2, f2*C3, f2p*C3p, f3*C4, f3*C4p
+C1, 0    , 0    , 0      , 0    , 0
+0 , C2   , 0    , 0      , 0    , 0
+0 , CJ   , 0    , 0      , 0    , 0
+0 , 0    , 0    , 0      , C3p  , 0
+0 , 0    , 0    , C3     , 0    , 0
+
+defvar P = 1.0
+
+defvar S = 100
+
+defvar SD = 100
+
+defvar R11 = 100
+
+defvar NR1 = 100
+
+defvar R21 = 100
+
+defvar R22 = 100
+
+{ Use a Bernoulli distribution . 
+defvar X = ber(P)
+
+defvar f1  = X*0    +  (1-X)*72
+
+defvar f2  = P*1.0  +  (1-X)*246
+
+defvar f2p = X*1.6  +  (1-X)*370
+
+defvar f3  = f2
+
+defvar CS = 0.43
+
+defvar C1 = 0.14
+
+defvar C2 = 0.50
+
+defvar CJ = 0.17
+
+defvar C3 = 0.74
+
+defvar C3p= 0.47
+
+defvar C4 = 0.48
+
+defvar C4p= 0.32
