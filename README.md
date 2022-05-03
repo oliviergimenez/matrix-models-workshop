@@ -5,4 +5,6 @@ Material for a workshop on matrix models organised back in 2014 by Jean-Dominiqu
 + [Lecture slides](https://github.com/oliviergimenez/matrix-models-workshop/blob/main/lectures/lectures-slides.pdf)
 + Practicals: [Exercises with solutions](https://github.com/oliviergimenez/matrix-models-workshop/blob/main/practicals/practicals-with-solutions.pdf), [R code](https://github.com/oliviergimenez/matrix-models-workshop/tree/main/practicals/R-codes) and [ULM code](https://github.com/oliviergimenez/matrix-models-workshop/tree/main/practicals/ULM-codes)    
 
-<a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>.
+## Reuse
+
+Text and figures are licensed under Creative Commons Attribution [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Any computer code (R, HTML, CSS, etc.) in slides and worksheets, including in slide and worksheet sources, is also licensed under [MIT](https://github.com/oliviergimenez/matrix-models-workshop/blob/master/LICENSE.md).
